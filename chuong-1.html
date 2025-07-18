@@ -138,31 +138,75 @@
   <p><strong>Tóm tắt:</strong> Mỗi ngày, anh Satoru đều chăm chỉ tưới nước cho cây Megumi</p>
 
   <h2>Danh sách chương:</h2>
-  <ul>
-    <li><a href="#" onclick="showPopup(event, 'chuong-1.1.html')">Chương 1: Cây đang dần lớn</a></li>
+ <ul>
+    <li><a class="chapter-link" href="#" onclick="showShopeePrompt('chuong-1.1.html'); return false;">📖 Chương 1: Cây đang dần lớn</a></li>
+    <li><a class="chapter-link" href="#" onclick="showShopeePrompt('chuong-2.1.html'); return false;">📖 Chương 2: Cánh hoa của em</a></li>
+    <li><a class="chapter-link" href="#" onclick="showShopeePrompt('chuong-3.1.html'); return false;">📖 Chương 3: Mầm xanh</a></li>
   </ul>
 
-  <div id="popup">
-    <div id="popup-content">
-      <p>Hãy ủng hộ chúng mình bằng cách ghé qua link Shopee trước nhé!</p>
-      <a class="button" href="https://s.shopee.vn/20kYtb34wD" target="_blank" onclick="unlockChapter()">Mở Shopee</a>
+  <footer>
+    &copy; 2025 Momoiro. All rights reserved.
+  </footer>
+
+  <div id="shopeePopup" class="popup-overlay">
+    <div class="popup-content">
+      <h3>🌸 Một yêu cầu nhỏ từ Momoiro 🌸</h3>
+      <p>Để ủng hộ nhóm dịch và giúp chúng mình có thêm động lực ra chương mới,</p>
+      <p>Mong bạn dành chút thời gian **click vào link Shopee bên dưới** nhé!</p>
+      <a id="popupShopeeLink" class="popup-shopee-button" href="#" target="_blank">🛒 Ủng hộ nhóm qua Shopee!</a>
+      <p style="font-size:0.9em; margin-top: 15px; color: #888;">(Sau khi nhấp, trang truyện sẽ tự động mở ra)</p>
     </div>
   </div>
 
   <script>
-    let targetLink = '';
+    // Biến toàn cục để lưu trữ trang chương cần mở
+    let currentChapterPage = '';
 
-    function showPopup(event, link) {
-      event.preventDefault();
-      targetLink = link;
-      document.getElementById('popup').style.display = 'flex';
+    function showShopeePrompt(chapterPage) {
+      currentChapterPage = chapterPage; // Lưu trang chương lại
+      const shopeePopup = document.getElementById('shopeePopup');
+      shopeePopup.style.display = 'flex'; // Hiện popup
+      shopeePopup.classList.add('active'); // Thêm class active cho hiệu ứng
+
+      // 1. ***ĐẶT LINK AFFILIATE SHOPEE CỦA BẠN VÀO ĐÂY***
+      // Ví dụ: Link đến một sản phẩm, một trang tìm kiếm sách, hoặc trang chủ Shopee có gắn mã theo dõi của bạn.
+      const shopeeLink = 'https://s.shopee.vn/20kYtb34wD'; // THAY THẾ 'YOUR_AFFILIATE_ID_HERE' BẰNG ID CỦA BẠN
+
+      const popupShopeeLink = document.getElementById('popupShopeeLink');
+      popupShopeeLink.href = shopeeLink; // Đặt href cho nút trong popup
+
+      // Thêm sự kiện khi nút Shopee trong popup được click
+      popupShopeeLink.onclick = function() {
+        // Ẩn popup ngay lập tức sau khi click
+        shopeePopup.style.display = 'none';
+        shopeePopup.classList.remove('active');
+
+        // Chuyển hướng đến trang chương truyện
+        // Không cần setTimeout nữa vì người dùng đã chủ động click vào link affiliate,
+        // sau đó click vào link chương truyện.
+        // Tuy nhiên, nếu bạn muốn đảm bảo link affiliate được ghi nhận trước khi người dùng
+        // quay lại trang của bạn, bạn vẫn có thể dùng setTimeout ở đây.
+        // Ở đây, tôi để người dùng tự mở tab Shopee, và tab truyện sẽ mở ngay sau đó.
+        window.open(shopeeLink, '_blank'); // Mở link Shopee trong tab mới
+        window.location.href = currentChapterPage; // Chuyển hướng trang hiện tại sang chương truyện
+        return false; // Ngăn chặn hành vi mặc định của thẻ a
+      };
     }
 
-    function unlockChapter() {
-      setTimeout(() => {
-        window.location.href = targetLink;
-      }, 500); // chờ nửa giây cho tự nhiên
+    // Bạn có thể thêm hàm này để đóng popup nếu muốn có nút "Đóng" hoặc click ra ngoài
+    function closePopup() {
+      const shopeePopup = document.getElementById('shopeePopup');
+      shopeePopup.style.display = 'none';
+      shopeePopup.classList.remove('active');
     }
+
+    // Bạn có thể thêm một sự kiện click vào overlay để đóng popup nếu muốn
+    // document.getElementById('shopeePopup').addEventListener('click', function(event) {
+    //   if (event.target === this) { // Chỉ đóng khi click vào nền overlay, không phải nội dung popup
+    //     closePopup();
+    //   }
+    // });
   </script>
+
 </body>
 </html>
