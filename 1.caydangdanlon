@@ -1,0 +1,20 @@
+<!-- index.html: Trang chủ -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>(GoFushi Doujinshi) Cây đang dần lớn</title>
+</head>
+<body>
+  <h1>(GoFushi Doujinshi) Cây đang dần lớn</h1>
+  <p><strong>Thể loại:</strong> Doujinshi, Tình cảm, Kỳ ảo</p>
+  <p><strong>Tóm tắt:</strong> Mỗi ngày, anh Satoru đều chăm chỉ tưới nước cho cây Megumi</p>
+
+  <h2>Danh sách chương:</h2>
+  <ul>
+    <li><a href="chuong-1.html">Chương 1: Cây đang dần lớn</a></li>
+   <!-- tiếp tục thêm chương khác -->
+  </ul>
+</body>
+</html>
+   
