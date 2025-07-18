@@ -3,154 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <title>(GoFushi Doujinshi) Cây đang dần lớn</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       background-color: #ffe6f2;
-      background-image: url('https://kazeaoi.wordpress.com/wp-content/uploads/2018/06/9d25ac42ef018e6d26a27c5b554c9d11.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      font-family: 'Pacifico', cursive;
-      color: #E18AAA;
-      font-size: 3em;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
     .chapter-link {
       display: inline-block;
+      margin-top: 30px;
       padding: 12px 20px;
       background-color: #ff8fa3;
       color: white;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: all 0.2s ease-in-out;
     }
-    .chapter-link:hover {
-      background-color: #e64980;
-      transform: translateY(-2px);
-    }
-    footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #888;
-      background: rgba(255,255,255,0.7);
-      padding: 10px 20px;
-      border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
-    }
-
-    /* Popup */
     .popup-overlay {
       display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 999;
+      background: rgba(0,0,0,0.6);
       justify-content: center;
       align-items: center;
+      z-index: 1000;
     }
-
     .popup-overlay.active {
       display: flex;
     }
-
     .popup-content {
-      background: #fff;
+      background: white;
       padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
       text-align: center;
-      max-width: 400px;
     }
-
     .popup-shopee-button {
       display: inline-block;
-      margin-top: 15px;
-      padding: 12px 25px;
-      background-color: #ff5722;
+      padding: 10px 20px;
+      background: #ff5722;
       color: white;
-      font-weight: bold;
+      border-radius: 8px;
       text-decoration: none;
-      border-radius: 10px;
-      font-size: 1.1em;
-      transition: background 0.2s;
-    }
-
-    .popup-shopee-button:hover {
-      background-color: #e64a19;
+      font-weight: bold;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
 
   <h1>🌸 (GoFushi Doujinshi) Cây đang dần lớn 🌸</h1>
-  <p><strong>Thể loại:</strong> Doujinshi, Tình cảm, Kỳ ảo</p>
-  <p><strong>Tóm tắt:</strong> Mỗi ngày, anh Satoru đều chăm chỉ tưới nước cho cây Megumi</p>
+  <a id="chapter1Btn" class="chapter-link" href="#">📖 Chương 1: Cây đang dần lớn</a>
 
-  <h2>Danh sách chương:</h2>
-  <ul>
-    <li><a class="chapter-link" href="#" onclick="showShopeePrompt('chuong-1.1.html'); return false;">📖 Chương 1: Cây đang dần lớn</a></li>
-  </ul>
-
-  <footer>
-    &copy; 2025 Momoiro. All rights reserved.
-  </footer>
-
-  <!-- Popup Shopee -->
+  <!-- Popup -->
   <div id="shopeePopup" class="popup-overlay">
     <div class="popup-content">
       <h3>🌸 Một yêu cầu nhỏ từ Momoiro 🌸</h3>
-      <p>Để ủng hộ nhóm dịch và giúp chúng mình có thêm động lực ra chương mới,</p>
-      <p>Mong bạn click vào link Shopee bên dưới nhé!</p>
-      <a id="popupShopeeLink" class="popup-shopee-button" href="#" target="_blank">🛒 Ủng hộ nhóm qua Shopee!</a>
-      <p style="font-size:0.9em; margin-top: 15px; color: #888;">(Trang truyện sẽ tự động mở sau vài giây...)</p>
+      <p>Để ủng hộ nhóm dịch, hãy nhấn vào Shopee trước khi đọc truyện nhé!</p>
+      <a id="popupShopeeLink" class="popup-shopee-button" href="#" target="_blank">🛒 Mở Shopee</a>
+      <p style="color: #888; font-size: 0.9em;">(Chương truyện sẽ mở sau vài giây...)</p>
     </div>
   </div>
 
   <script>
-    let currentChapterPage = '';
+    const shopeeLink = 'https://s.shopee.vn/20kYtb34wD'; // link affiliate
+    let currentChapterLink = '';
 
-    function showShopeePrompt(chapterPage) {
-      currentChapterPage = chapterPage;
-      document.getElementById('shopeePopup').classList.add('active');
+    // Khi click vào chương 1
+    document.getElementById('chapter1Btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      currentChapterLink = 'chuong-1.1.html'; // lưu lại link
+      document.getElementById('shopeePopup').classList.add('active'); // hiện popup
+    });
 
-      const popupShopeeLink = document.getElementById('popupShopeeLink');
-      const shopeeLink = 'https://s.shopee.vn/20kYtb34wD'; // LINK AFFILIATE CỦA BẠN
+    // Khi click vào nút Shopee
+    document.getElementById('popupShopeeLink').addEventListener('click', function(e) {
+      e.preventDefault();
 
-      popupShopeeLink.href = shopeeLink;
+      // Mở Shopee trong tab mới
+      const newTab = window.open(shopeeLink, '_blank');
 
-      // Xóa sự kiện cũ (nếu có)
-      popupShopeeLink.onclick = null;
+      // Đóng popup
+      document.getElementById('shopeePopup').classList.remove('active');
 
-      // Gắn sự kiện mới
-      popupShopeeLink.onclick = function(e) {
-        e.preventDefault();
-
-        // Mở tab Shopee
-        window.open(shopeeLink, '_blank');
-
-        // Ẩn popup
-        document.getElementById('shopeePopup').classList.remove('active');
-
-        // Sau 2 giây thì chuyển sang chương truyện
-        setTimeout(function() {
-          window.location.href = currentChapterPage;
-        }, 2000);
-
-        return false;
-      };
-    }
+      // Chuyển hướng sau 2-3 giây (đủ để affiliate được tính)
+      setTimeout(() => {
+        window.location.href = currentChapterLink;
+      }, 2500);
+    });
   </script>
 
 </body>
