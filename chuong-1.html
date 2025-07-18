@@ -3,127 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <title>(GoFushi Doujinshi) Cây đang dần lớn</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      background-color: #ffe6f2; /* Hồng pastel nhạt */
-      margin: 0;
-      padding: 20px;
-      /* Thay thế bằng URL ảnh cánh hoa rơi của bạn */
+      background-color: #ffe6f2;
       background-image: url('https://kazeaoi.wordpress.com/wp-content/uploads/2018/06/9d25ac42ef018e6d26a27c5b554c9d11.jpg');
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: center center;
       background-attachment: fixed;
-      color: #333;
+      margin: 0;
+      padding: 20px;
     }
     h1 {
-      color: #E18AAA; /* Hồng đậm hơn */
       font-family: 'Pacifico', cursive;
+      color: #E18AAA;
       font-size: 3em;
       margin-bottom: 20px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
-    h2 {
-      color: #d6336c;
-      margin-top: 30px;
-      margin-bottom: 15px;
-    }
-    p {
-      color: #555;
-      line-height: 1.6;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin-bottom: 10px;
-    }
     .chapter-link {
       display: inline-block;
       padding: 12px 20px;
-      background-color: #ff8fa3; /* Hồng pastel */
+      background-color: #ff8fa3;
       color: white;
       text-decoration: none;
       font-weight: bold;
       border-radius: 8px;
-      transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.2s ease-in-out;
     }
     .chapter-link:hover {
-      background-color: #e64980; /* Hồng đậm hơn khi di chuột */
+      background-color: #e64980;
       transform: translateY(-2px);
     }
     footer {
       margin-top: 50px;
       font-size: 0.9em;
       color: #888;
-      padding: 10px;
-      background-color: rgba(255, 255, 255, 0.7);
+      background: rgba(255,255,255,0.7);
+      padding: 10px 20px;
       border-radius: 10px;
       display: inline-block;
-      padding-left: 20px;
-      padding-right: 20px;
       box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
     }
 
-    /* CSS cho Popup */
+    /* Popup */
     .popup-overlay {
-      display: none; /* Mặc định ẩn */
+      display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6); /* Nền mờ */
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
       z-index: 999;
-      display: flex;
       justify-content: center;
       align-items: center;
     }
 
+    .popup-overlay.active {
+      display: flex;
+    }
+
     .popup-content {
-      background-color: #fff;
+      background: #fff;
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
       text-align: center;
       max-width: 400px;
-      transform: scale(0.9);
-      transition: transform 0.3s ease-out;
-    }
-
-    .popup-overlay.active .popup-content {
-      transform: scale(1); /* Hiệu ứng phóng to khi hiện ra */
-    }
-
-    .popup-content h3 {
-      color: #d6336c;
-      margin-top: 0;
-      font-size: 1.5em;
-    }
-
-    .popup-content p {
-      margin-bottom: 20px;
-      color: #666;
     }
 
     .popup-shopee-button {
       display: inline-block;
-      padding: 15px 30px;
-      background-color: #ff5722; /* Màu cam đặc trưng của Shopee */
+      margin-top: 15px;
+      padding: 12px 25px;
+      background-color: #ff5722;
       color: white;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
       border-radius: 10px;
-      transition: background 0.2s ease-in-out;
       font-size: 1.1em;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: background 0.2s;
     }
 
     .popup-shopee-button:hover {
@@ -138,75 +99,58 @@
   <p><strong>Tóm tắt:</strong> Mỗi ngày, anh Satoru đều chăm chỉ tưới nước cho cây Megumi</p>
 
   <h2>Danh sách chương:</h2>
- <ul>
+  <ul>
     <li><a class="chapter-link" href="#" onclick="showShopeePrompt('chuong-1.1.html'); return false;">📖 Chương 1: Cây đang dần lớn</a></li>
-     </ul>
+  </ul>
 
   <footer>
     &copy; 2025 Momoiro. All rights reserved.
   </footer>
 
+  <!-- Popup Shopee -->
   <div id="shopeePopup" class="popup-overlay">
     <div class="popup-content">
       <h3>🌸 Một yêu cầu nhỏ từ Momoiro 🌸</h3>
       <p>Để ủng hộ nhóm dịch và giúp chúng mình có thêm động lực ra chương mới,</p>
-      <p>Mong bạn dành chút thời gian **click vào link Shopee bên dưới** nhé!</p>
+      <p>Mong bạn click vào link Shopee bên dưới nhé!</p>
       <a id="popupShopeeLink" class="popup-shopee-button" href="#" target="_blank">🛒 Ủng hộ nhóm qua Shopee!</a>
-      <p style="font-size:0.9em; margin-top: 15px; color: #888;">(Sau khi nhấp, trang truyện sẽ tự động mở ra)</p>
+      <p style="font-size:0.9em; margin-top: 15px; color: #888;">(Trang truyện sẽ tự động mở sau vài giây...)</p>
     </div>
   </div>
 
   <script>
-    // Biến toàn cục để lưu trữ trang chương cần mở
     let currentChapterPage = '';
 
     function showShopeePrompt(chapterPage) {
-      currentChapterPage = chapterPage; // Lưu trang chương lại
-      const shopeePopup = document.getElementById('shopeePopup');
-      shopeePopup.style.display = 'flex'; // Hiện popup
-      shopeePopup.classList.add('active'); // Thêm class active cho hiệu ứng
-
-      // 1. ***ĐẶT LINK AFFILIATE SHOPEE CỦA BẠN VÀO ĐÂY***
-      // Ví dụ: Link đến một sản phẩm, một trang tìm kiếm sách, hoặc trang chủ Shopee có gắn mã theo dõi của bạn.
-      const shopeeLink = 'https://s.shopee.vn/20kYtb34wD'; // THAY THẾ 'YOUR_AFFILIATE_ID_HERE' BẰNG ID CỦA BẠN
+      currentChapterPage = chapterPage;
+      document.getElementById('shopeePopup').classList.add('active');
 
       const popupShopeeLink = document.getElementById('popupShopeeLink');
-      popupShopeeLink.href = shopeeLink; // Đặt href cho nút trong popup
+      const shopeeLink = 'https://s.shopee.vn/20kYtb34wD'; // LINK AFFILIATE CỦA BẠN
 
-      // Thêm sự kiện khi nút Shopee trong popup được click
-   popupShopeeLink.onclick = function(e) {
-  e.preventDefault(); // Ngăn hành động mặc định
+      popupShopeeLink.href = shopeeLink;
 
-  // 1. Mở link Shopee trong tab mới
-  window.open(popupShopeeLink.href, '_blank');
+      // Xóa sự kiện cũ (nếu có)
+      popupShopeeLink.onclick = null;
 
-  // 2. Ẩn popup
-  const shopeePopup = document.getElementById('shopeePopup');
-  shopeePopup.style.display = 'none';
-  shopeePopup.classList.remove('active');
+      // Gắn sự kiện mới
+      popupShopeeLink.onclick = function(e) {
+        e.preventDefault();
 
-  // 3. Sau 3 giây thì chuyển hướng đến chương truyện
-  setTimeout(function() {
-    window.location.href = currentChapterPage;
-  }, 3000); // 3 giây, bạn có thể chỉnh thành 2000 (2 giây) nếu muốn
+        // Mở tab Shopee
+        window.open(shopeeLink, '_blank');
 
-  return false;
-};
+        // Ẩn popup
+        document.getElementById('shopeePopup').classList.remove('active');
+
+        // Sau 2 giây thì chuyển sang chương truyện
+        setTimeout(function() {
+          window.location.href = currentChapterPage;
+        }, 2000);
+
+        return false;
+      };
     }
-
-    // Bạn có thể thêm hàm này để đóng popup nếu muốn có nút "Đóng" hoặc click ra ngoài
-    function closePopup() {
-      const shopeePopup = document.getElementById('shopeePopup');
-      shopeePopup.style.display = 'none';
-      shopeePopup.classList.remove('active');
-    }
-
-    // Bạn có thể thêm một sự kiện click vào overlay để đóng popup nếu muốn
-    // document.getElementById('shopeePopup').addEventListener('click', function(event) {
-    //   if (event.target === this) { // Chỉ đóng khi click vào nền overlay, không phải nội dung popup
-    //     closePopup();
-    //   }
-    // });
   </script>
 
 </body>
