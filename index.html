@@ -96,15 +96,19 @@
   <h1>🌸 Momoiro 🌸</h1>
   <p>Chào mừng bạn đến với trang dịch truyện</p>
 
-  <nav>
-    <a href="#chapters">📚 Các Chương</a>
-  </nav>
-
   <div id="chapters">
-      <h2>Các Chương Truyện</h2>
-      <a class="chapter-link" href="chuong-1.html">📖 (Gofushi) Cây đang dần lớn</a>
-      <a class="chapter-link" href="chuong-2.html">📖 (Zhongchi) Mâu thuẫn nội tâm</a>
+  <h2>Các Thể Loại</h2>
+
+  <button class="chapter-link" onclick="toggleDropdown('jjk')">📘 Jujutsu Kaisen DJ</button>
+  <div id="jjk" class="dropdown-content" style="display:none;">
+    <a class="chapter-link sub" href="chuong-1.html">📖 (Gofushi) Cây đang dần lớn</a>
   </div>
+
+  <button class="chapter-link" onclick="toggleDropdown('genshin')">📙 Genshin Impact Doujinshi</button>
+  <div id="genshin" class="dropdown-content" style="display:none;">
+    <a class="chapter-link sub" href="chuong-2.html">📖 (Zhongchi) Mâu thuẫn nội tâm</a>
+  </div>
+</div>
   <footer>
     &copy; 2025 Momoiro. All rights reserved.
   </footer>
