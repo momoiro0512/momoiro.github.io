@@ -20,6 +20,7 @@
       background-attachment: fixed;
       color: #333;
     }
+
     h1 {
       color: #E18AAA;
       font-family: 'Pacifico', cursive;
@@ -27,6 +28,7 @@
       margin-bottom: 30px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
+
     .chapter-link {
       display: inline-block;
       padding: 15px 25px;
@@ -41,16 +43,12 @@
       font-size: 1.2em;
       cursor: pointer;
     }
+
     .chapter-link:hover {
       background-color: #e64980;
       transform: translateY(-3px);
     }
-    .dropdown-content {
-      display: none;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      animation: fadeIn 0.3s ease-in-out;
-    }
+
     .chapter-link.sub {
       background-color: #f7b2c4;
       font-size: 1em;
@@ -58,10 +56,33 @@
       display: block;
       width: fit-content;
     }
+
+    .dropdown-content {
+      display: none;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
+    .category-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .category {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     footer {
       margin-top: 60px;
       font-size: 0.9em;
@@ -84,19 +105,21 @@
   <div id="chapters">
     <h2>Các Thể Loại</h2>
 
-    <!-- Jujutsu Kaisen DJ -->
-    <div>
-      <div class="chapter-link" onclick="toggleDropdown('jjk')">Jujutsu Kaisen Doujinshi</div>
-      <div id="jjk" class="dropdown-content">
-        <a class="chapter-link sub" href="chuong-1.html">📖 (Gofushi) Cây đang dần lớn</a>
+    <div class="category-row">
+      <!-- Jujutsu Kaisen DJ -->
+      <div class="category">
+        <div class="chapter-link" onclick="toggleDropdown('jjk')">📘 Jujutsu Kaisen Doujinshi</div>
+        <div id="jjk" class="dropdown-content">
+          <a class="chapter-link sub" href="chuong-1.html">📖 (Gofushi) Cây đang dần lớn</a>
+        </div>
       </div>
-    </div>
 
-    <!-- Genshin Impact Doujinshi -->
-    <div>
-      <div class="chapter-link" onclick="toggleDropdown('genshin')">Genshin Impact Doujinshi</div>
-      <div id="genshin" class="dropdown-content">
-        <a class="chapter-link sub" href="chuong-2.html">📖 (Zhongchi) Mâu thuẫn nội tâm</a>
+      <!-- Genshin Impact Doujinshi -->
+      <div class="category">
+        <div class="chapter-link" onclick="toggleDropdown('genshin')">📙 Genshin Impact Doujinshi</div>
+        <div id="genshin" class="dropdown-content">
+          <a class="chapter-link sub" href="chuong-2.html">📖 (Zhongchi) Mâu thuẫn nội tâm</a>
+        </div>
       </div>
     </div>
   </div>
@@ -105,15 +128,10 @@
     &copy; 2025 Momoiro. All rights reserved.
   </footer>
 
-  <!-- Script cho dropdown -->
   <script>
     function toggleDropdown(id) {
       const el = document.getElementById(id);
-      if (el.style.display === "block") {
-        el.style.display = "none";
-      } else {
-        el.style.display = "block";
-      }
+      el.style.display = (el.style.display === "block") ? "none" : "block";
     }
   </script>
 
