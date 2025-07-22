@@ -10,50 +10,28 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      background-color: #ffe6f2; /* Hồng pastel nhạt */
+      background-color: #ffe6f2;
       margin: 0;
       padding: 20px;
-      background-image: url('https://kazeaoi.wordpress.com/wp-content/uploads/2018/06/9d25ac42ef018e6d26a27c5b554c9d11.jpg'); /* Thay thế bằng URL ảnh cánh hoa rơi của bạn */
+      background-image: url('https://kazeaoi.wordpress.com/wp-content/uploads/2018/06/9d25ac42ef018e6d26a27c5b554c9d11.jpg');
       background-repeat: no-repeat;
-      background-size: cover; /* Đảm bảo ảnh nền bao phủ toàn bộ */
+      background-size: cover;
       background-position: center center;
-      background-attachment: fixed; /* Giữ ảnh nền cố định khi cuộn */
+      background-attachment: fixed;
       color: #333;
     }
     h1 {
-      color: #E18AAA; /* Hồng đậm hơn */
-      font-family: 'Pacifico', cursive; /* Một font chữ mềm mại hơn cho tiêu đề */
+      color: #E18AAA;
+      font-family: 'Pacifico', cursive;
       font-size: 3em;
       margin-bottom: 30px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    }
-    nav {
-      margin-bottom: 30px;
-      background-color: rgba(255, 255, 255, 0.7); /* Nền mờ cho mục lục */
-      padding: 10px 0;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      display: inline-block; /* Để nav không chiếm toàn bộ chiều rộng */
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-    nav a {
-      color: #d6336c; /* Màu hồng cho liên kết mục lục */
-      text-decoration: none;
-      font-weight: bold;
-      padding: 10px 15px;
-      transition: background 0.2s ease-in-out;
-      border-radius: 5px;
-    }
-    nav a:hover {
-      background-color: #ffb6c1; /* Nền nhạt hơn khi di chuột */
-      color: white;
     }
     .chapter-link {
       display: inline-block;
       padding: 15px 25px;
       margin: 15px;
-      background-color: #ff8fa3; /* Hồng pastel */
+      background-color: #ff8fa3;
       color: white;
       text-decoration: none;
       font-weight: bold;
@@ -61,30 +39,37 @@
       transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       font-size: 1.2em;
+      cursor: pointer;
     }
     .chapter-link:hover {
-      background-color: #e64980; /* Hồng đậm hơn khi di chuột */
-      transform: translateY(-3px); /* Hiệu ứng nhấc nhẹ */
+      background-color: #e64980;
+      transform: translateY(-3px);
     }
-    .image-section {
-        margin-top: 40px;
-        margin-bottom: 40px;
+    .dropdown-content {
+      display: none;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      animation: fadeIn 0.3s ease-in-out;
     }
-    .image-section img {
-        max-width: 80%; /* Giới hạn kích thước ảnh */
-        height: auto;
-        border-radius: 15px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        border: 5px solid rgba(255, 255, 255, 0.8); /* Viền trắng mềm mại */
+    .chapter-link.sub {
+      background-color: #f7b2c4;
+      font-size: 1em;
+      margin: 10px auto;
+      display: block;
+      width: fit-content;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     footer {
       margin-top: 60px;
       font-size: 0.9em;
       color: #888;
       padding: 10px;
-      background-color: rgba(255, 255, 255, 0.7); /* Nền mờ cho footer */
+      background-color: rgba(255, 255, 255, 0.7);
       border-radius: 10px;
-      display: inline-block; /* Để footer không chiếm toàn bộ chiều rộng */
+      display: inline-block;
       padding-left: 20px;
       padding-right: 20px;
       box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
@@ -97,21 +82,40 @@
   <p>Chào mừng bạn đến với trang dịch truyện</p>
 
   <div id="chapters">
-  <h2>Các Thể Loại</h2>
+    <h2>Các Thể Loại</h2>
 
-  <button class="chapter-link" onclick="toggleDropdown('jjk')">📘 Jujutsu Kaisen DJ</button>
-  <div id="jjk" class="dropdown-content" style="display:none;">
-    <a class="chapter-link sub" href="chuong-1.html">📖 (Gofushi) Cây đang dần lớn</a>
+    <!-- Jujutsu Kaisen DJ -->
+    <div>
+      <div class="chapter-link" onclick="toggleDropdown('jjk')">Jujutsu Kaisen Doujinshi</div>
+      <div id="jjk" class="dropdown-content">
+        <a class="chapter-link sub" href="chuong-1.html">📖 (Gofushi) Cây đang dần lớn</a>
+      </div>
+    </div>
+
+    <!-- Genshin Impact Doujinshi -->
+    <div>
+      <div class="chapter-link" onclick="toggleDropdown('genshin')">Genshin Impact Doujinshi</div>
+      <div id="genshin" class="dropdown-content">
+        <a class="chapter-link sub" href="chuong-2.html">📖 (Zhongchi) Mâu thuẫn nội tâm</a>
+      </div>
+    </div>
   </div>
 
-  <button class="chapter-link" onclick="toggleDropdown('genshin')">📙 Genshin Impact Doujinshi</button>
-  <div id="genshin" class="dropdown-content" style="display:none;">
-    <a class="chapter-link sub" href="chuong-2.html">📖 (Zhongchi) Mâu thuẫn nội tâm</a>
-  </div>
-</div>
   <footer>
     &copy; 2025 Momoiro. All rights reserved.
   </footer>
+
+  <!-- Script cho dropdown -->
+  <script>
+    function toggleDropdown(id) {
+      const el = document.getElementById(id);
+      if (el.style.display === "block") {
+        el.style.display = "none";
+      } else {
+        el.style.display = "block";
+      }
+    }
+  </script>
 
 </body>
 </html>
