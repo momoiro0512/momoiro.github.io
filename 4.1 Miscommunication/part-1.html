@@ -21,7 +21,6 @@
       color: #333;
     }
 
-    /* Thanh cố định trên cùng */
     .top-nav {
       position: fixed;
       top: 0;
@@ -55,9 +54,9 @@
       color: #E18AAA;
       font-family: 'Pacifico', cursive;
       font-size: 3em;
+      margin-top: 80px;
       margin-bottom: 20px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-      margin-top: 80px; /* Đẩy xuống vì có thanh cố định */
     }
 
     h2 {
@@ -71,18 +70,18 @@
       line-height: 1.6;
     }
 
-   .chapter-link {
-  display: inline-block;
-  padding: 12px 20px;
-  background-color: #ff8fa3;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 15px 10px 40px 10px; /* gom margin-top, margin-right, margin-bottom, margin-left */
-}
+    .chapter-link {
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #ff8fa3;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 15px 10px 40px 10px;
+    }
 
     .chapter-link:hover {
       background-color: #e64980;
@@ -99,15 +98,15 @@
     }
 
     footer {
-  margin-top: 50px;
-  font-size: 0.9em;
-  color: #888;
-  padding: 10px 20px;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
-  /* display: block; // hoặc không khai báo để mặc định */
-}
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #888;
+      padding: 10px 20px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+    }
+
     .popup-overlay {
       display: none;
       position: fixed;
@@ -141,6 +140,13 @@
       font-weight: bold;
       margin-top: 15px;
     }
+
+    .chapter-preview img {
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
@@ -153,7 +159,8 @@
   <h1>🌸 (Zhongchi Doujinshi) Mâu thuẫn nội tâm 🌸</h1>
 
   <div class="chapter-preview">
-    <img src="4.1%20Miscommunication/Part1-done/1.png" alt="Minh họa chương 1" style="max-width: 90%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-top: 30px;">
+    <!-- ✅ Đã sửa đường dẫn ảnh bằng cách encode khoảng trắng thành %20 -->
+    <img src="4.1%20Miscommunication/Part1-done/1.png" alt="Minh họa chương 1">
     <h2>Giới thiệu</h2>
     <p>[Zhongchi Doujinshi] Miscommunication - Onomatope - On Going</p>
     <p>Tạm dịch: Mâu thuẫn nội tâm</p>
@@ -180,7 +187,7 @@
   </footer>
 
   <script>
-    const shopeeLink = 'https://s.shopee.vn/LcRYYgumn'; // Link Shopee
+    const shopeeLink = 'https://s.shopee.vn/LcRYYgumn';
     let currentChapterLink = 'part-1.1.html';
 
     document.getElementById('chapter1Btn').addEventListener('click', function(e) {
@@ -192,7 +199,6 @@
       e.preventDefault();
       window.open(shopeeLink, '_blank');
       document.getElementById('shopeePopup').classList.remove('active');
-
       setTimeout(() => {
         window.location.href = currentChapterLink;
       }, 3000);
