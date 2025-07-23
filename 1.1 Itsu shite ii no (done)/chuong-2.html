@@ -165,6 +165,7 @@
   <!-- Nút đọc chương -->
   <a id="chapter1Btn" class="chapter-link" href="#">📖 Chương 1</a>
   <a id="chapter2Btn" class="chapter-link" href="#">📖 Chương 2 (H)</a>
+  <a id="chapter3Btn" class="chapter-link" href="#">📖 Phiên ngoại</a>
 
   <!-- Popup -->
   <div id="shopeePopup" class="popup-overlay">
@@ -193,7 +194,14 @@
     currentShopeeLink = 'https://s.shopee.vn/gFJOzvmOl'; // Shopee link chương 2 (bạn thay tại đây)
     document.getElementById('shopeePopup').classList.add('active');
   });
-
+// Chương 3 (bạn có thể thay link Shopee và chương tại đây)
+  document.getElementById('chapter3Btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    currentChapterLink = 'PN.html';
+    currentShopeeLink = 'https://s.shopee.vn/2B47GpqlGa'; // 👉 sửa lại link Shopee chương 3
+    document.getElementById('shopeePopup').classList.add('active');
+  });
+    
   document.getElementById('popupShopeeLink').addEventListener('click', function(e) {
     e.preventDefault();
     window.open(currentShopeeLink, '_blank');
