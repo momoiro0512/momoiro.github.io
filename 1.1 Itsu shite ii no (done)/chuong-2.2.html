@@ -109,6 +109,7 @@
 <body>
 
   <div class="top-nav">
+    <a id="prevChapterBtn" class="home-button" href="#">Chương trước</a>
     <a href="/index.html" class="home-button">Quay về trang chủ</a>
     <a id="nextChapterBtn" class="home-button" href="#">Chương tiếp</a>
   </div>
@@ -136,28 +137,44 @@
   </div>
 
   <!-- SCRIPT -->
-  <script>
-    const nextChapterLink = 'PN.html';
-    const shopeeLink = 'https://s.shopee.vn/9fA8CBhdlj';
+ <script>
+  const prevChapterLink = 'chuong-2.1.html'; // 🔁 Đường dẫn chương trước
+  const prevShopeeLink = 'https://s.shopee.vn/7piU1cU0gI'; // 🔁 Link Shopee chương trước
 
-    const nextBtn = document.getElementById('nextChapterBtn');
-    const popup = document.getElementById('shopeePopup');
-    const popupShopeeLink = document.getElementById('popupShopeeLink');
+  const nextChapterLink = 'PN.html'; // 🔁 Đường dẫn chương sau
+  const nextShopeeLink = 'https://s.shopee.vn/9fA8CBhdlj'; // 🔁 Link Shopee chương sau
 
-    nextBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      popup.classList.add('active');
-    });
+  let currentChapterLink = '';
+  let currentShopeeLink = '';
 
-    popupShopeeLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.open(shopeeLink, '_blank');
-      popup.classList.remove('active');
-      setTimeout(() => {
-        window.location.href = nextChapterLink;
-      }, 3000);
-    });
-  </script>
+  const prevBtn = document.getElementById('prevChapterBtn');
+  const nextBtn = document.getElementById('nextChapterBtn');
+  const popup = document.getElementById('shopeePopup');
+  const popupShopeeLink = document.getElementById('popupShopeeLink');
+
+  prevBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    currentChapterLink = prevChapterLink;
+    currentShopeeLink = prevShopeeLink;
+    popup.classList.add('active');
+  });
+
+  nextBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    currentChapterLink = nextChapterLink;
+    currentShopeeLink = nextShopeeLink;
+    popup.classList.add('active');
+  });
+
+  popupShopeeLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.open(currentShopeeLink, '_blank');
+    popup.classList.remove('active');
+    setTimeout(() => {
+      window.location.href = currentChapterLink;
+    }, 3000);
+  });
+</script>
 
 </body>
 </html>
