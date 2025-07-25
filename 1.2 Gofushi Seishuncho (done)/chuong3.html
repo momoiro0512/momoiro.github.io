@@ -1,1 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>(GoFushi Doujinshi) Sổ tay thanh xuân</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #ffe6f2;
+      margin: 0;
+      padding: 20px;
+      background-image: url('https://kazeaoi.wordpress.com/wp-content/uploads/2018/06/9d25ac42ef018e6d26a27c5b554c9d11.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      color: #333;
+    }
 
+    /* Thanh cố định trên cùng */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 240, 245, 0.7);
+      backdrop-filter: blur(5px);
+      padding: 10px 0;
+      text-align: center;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .home-button {
+      background-color: #ffb6c1;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+    .home-button:hover {
+      background-color: #e64980;
+      transform: translateY(-2px);
+    }
+
+    h1 {
+      color: #E18AAA;
+      font-family: 'Pacifico', cursive;
+      font-size: 3em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      margin-top: 80px; /* Đẩy xuống vì có thanh cố định */
+    }
+
+    h2 {
+      color: #d6336c;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+   .chapter-link {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #ff8fa3;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 15px 10px 40px 10px; /* gom margin-top, margin-right, margin-bottom, margin-left */
+}
+
+    .chapter-link:hover {
+      background-color: #e64980;
+      transform: translateY(-2px);
+    }
+
+    .chapter-preview {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 800px;
+      margin: 30px auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+  margin-top: 50px;
+  font-size: 0.9em;
+  color: #888;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+  /* display: block; // hoặc không khai báo để mặc định */
+}
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-overlay.active {
+      display: flex;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 90%;
+    }
+
+    .popup-shopee-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #ff5722;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Thanh cố định đầu trang -->
+  <div class="top-nav">
+    <a href="/index.html" class="home-button">Quay về trang chủ</a>
+  </div>
+
+  <h1>🌸 (GoFushi Doujinshi) Sổ tay thanh xuân 🌸</h1>
+
+  <div class="chapter-preview">
+    <img src="Part%201/1.jpg" alt="Minh họa chương 1" style="max-width: 90%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-top: 30px;">
+    <h2>Giới thiệu</h2>
+    <p>[Gofushi Doujinshi] Seishuncho - Inu Daisuki - HOÀN</p>
+    <p>Tạm dịch: Sổ tay thanh xuân Gofushi</p>
+    <p>Tác giả: Inu Daisuki</p>
+    <p>Raw: Thánh địa myreadingmanga</p>
+    <p>Tình yêu chớm nở giữa đôi bạn trẻ liệu có vượt qua được gió tuyết mùa đông.</p>
+  </div>
+
+  <!-- Nút đọc chương -->
+  <a id="chapter1Btn" class="chapter-link" href="#">📖 Chương 1</a>
+  <a id="chapter2Btn" class="chapter-link" href="#">📖 Chương 2 (H)</a>
+
+  <!-- Popup -->
+  <div id="shopeePopup" class="popup-overlay">
+    <div class="popup-content">
+      <h3>🌸 Một yêu cầu nhỏ từ Momoiro 🌸</h3>
+      <p>Để ủng hộ nhóm dịch, nếu được mời bạn mua thứ gì đó qua Shopee nhé!</p>
+      <a id="popupShopeeLink" class="popup-shopee-button" href="#" target="_blank">🛒 Mở Shopee</a>
+      <p style="color: #888; font-size: 0.9em;">(Chương truyện sẽ mở sau 5-6 giây...)</p>
+    </div>
+  </div>
+
+  <script>
+  let currentChapterLink = '';
+  let currentShopeeLink = '';
+
+  document.getElementById('chapter1Btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    currentChapterLink = 'chuong3.1.html'; // Đường dẫn chương 1
+    currentShopeeLink = 'https://s.shopee.vn/801xDeXZtP'; // Shopee link chương 1
+    document.getElementById('shopeePopup').classList.add('active');
+  });
+
+  document.getElementById('chapter2Btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    currentChapterLink = 'chuong3.2.html'; // Đường dẫn chương 2
+    currentShopeeLink = 'https://s.shopee.vn/2g0QruTVje'; // Shopee link chương 2 (bạn thay tại đây)
+    document.getElementById('shopeePopup').classList.add('active');
+  });
+    
+  document.getElementById('popupShopeeLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open(currentShopeeLink, '_blank');
+    document.getElementById('shopeePopup').classList.remove('active');
+
+    setTimeout(() => {
+      window.location.href = currentChapterLink;
+    }, 3000);
+  });
+</script>
+
+<!-- Bình luận bằng Cusdis -->
+  <div style="max-width: 800px; margin: 50px auto; background-color: rgba(255, 255, 255, 0.85); padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="15436ac4-9fde-438a-97e9-08d882790dfe"
+      data-page-id="Gofushi-chuong-2"
+      data-page-url="https://momoiro0512.github.io/4.1Miscommunication/part-1.html"
+      data-page-title="(GoFushi Doujinshi) Sổ tay thanh xuân - Giới thiệu">
+    </div>
+  </div>
+
+  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+  <footer>
+    &copy; 2025 Momoiro. All rights reserved.
+  </footer>
+</body>
+</html>
