@@ -118,11 +118,19 @@
   <div class="image-container">
     <!-- Từ 1 đến 21 -->
     <!-- Bạn có thể dùng code sinh tự động nếu cần -->
-    <script>
-      for (let i = 1; i = 21+22; i <= 27; i++) {
-        document.write(`<img src="Part%201/${i}.jpg" alt="Trang ${i}">`);
-      }
-    </script>
+<script>
+  for (let i = 1; i <= 20; i++) {
+    document.write(`<img src="Part%201/${i}.jpg" alt="Trang ${i}">`);
+  }
+
+  // Ảnh đặc biệt tên là 21+22.jpg
+  document.write(`<img src="Part%201/21+22.jpg" alt="Trang 21+22">`);
+
+  // Tiếp tục các ảnh còn lại
+  for (let i = 23; i <= 27; i++) {
+    document.write(`<img src="Part%201/${i}.jpg" alt="Trang ${i}">`);
+  }
+</script>
   </div>
 
   <!-- POPUP -->
