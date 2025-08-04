@@ -169,36 +169,9 @@
   </div>
 
   <!-- Nút đọc chương -->
-  <a id="chapter1Btn" class="chapter-link" href="#">📖 Chương 1</a>
+  <a class="chapter-link" href="part1.1.html" onclick="window.open('https://s.shopee.vn/8UyIoRertm', '_blank');">📖 Chương 1</a>
 
-  <!-- Popup -->
-  <div id="shopeePopup" class="popup-overlay">
-    <div class="popup-content">
-      <h3>🌸 Một yêu cầu nhỏ từ Momoiro 🌸</h3>
-      <p>Để ủng hộ nhóm dịch, nếu được mời bạn mua thứ gì đó qua Shopee nhé!</p>
-      <a id="popupShopeeLink" class="popup-shopee-button" href="#" target="_blank">🛒 Mở Shopee</a>
-      <p style="color: #888; font-size: 0.9em;">(Chương truyện sẽ mở sau 5-6 giây...)</p>
-    </div>
-  </div>
- 
-  <script>
-    const shopeeLink = 'https://s.shopee.vn/8UyIoRertm';
-    let currentChapterLink = 'part1.1.html';
 
-    document.getElementById('chapter1Btn').addEventListener('click', function(e) {
-      e.preventDefault();
-      document.getElementById('shopeePopup').classList.add('active');
-    });
-
-    document.getElementById('popupShopeeLink').addEventListener('click', function(e) {
-      e.preventDefault();
-      window.open(shopeeLink, '_blank');
-      document.getElementById('shopeePopup').classList.remove('active');
-      setTimeout(() => {
-        window.location.href = currentChapterLink;
-      }, 3000);
-    });
-  </script>
 <!-- Bình luận bằng Cusdis -->
   <div style="max-width: 800px; margin: 50px auto; background-color: rgba(255, 255, 255, 0.85); padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
     <div id="cusdis_thread"
