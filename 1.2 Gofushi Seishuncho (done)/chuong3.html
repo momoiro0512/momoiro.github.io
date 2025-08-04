@@ -133,24 +133,22 @@
   <a id="chapter1Btn" class="chapter-link" href="#">📖 Chương 1</a>
   <a id="chapter2Btn" class="chapter-link" href="#">📖 Chương 2 (H)</a>
 
-  <script>
-  let currentChapterLink = '';
-  let currentShopeeLink = '';
+   <script>
+    function openBothTabs(shopeeLink, chapterLink) {
+      window.open(shopeeLink, '_blank');
+      window.open(chapterLink, '_blank');
+    }
 
-  function openShopeeAndRedirect(shopeeLink, chapterLink) {
-    // Mở Shopee ngay lập tức
-    window.open(shopeeLink, '_blank');
+    document.getElementById('chapter1Btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      openBothTabs('https://s.shopee.vn/801xDeXZtP', 'chuong3.1.html');
+    });
 
-  document.getElementById('chapter1Btn').addEventListener('click', function(e) {
-    e.preventDefault();
-    openShopeeAndRedirect('https://s.shopee.vn/801xDeXZtP', 'chuong3.1.html');
-  });
-
-  document.getElementById('chapter2Btn').addEventListener('click', function(e) {
-    e.preventDefault();
-    openShopeeAndRedirect('https://s.shopee.vn/2g0QruTVje', 'chuong3.2.html');
-  });
-</script>
+    document.getElementById('chapter2Btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      openBothTabs('https://s.shopee.vn/2g0QruTVje', 'chuong3.2.html');
+    });
+  </script>
 
 <!-- Bình luận bằng Cusdis -->
   <div style="max-width: 800px; margin: 50px auto; background-color: rgba(255, 255, 255, 0.85); padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
