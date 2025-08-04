@@ -108,40 +108,7 @@
   box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
   /* display: block; // hoặc không khai báo để mặc định */
 }
-    .popup-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .popup-overlay.active {
-      display: flex;
-    }
-
-    .popup-content {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
-      max-width: 90%;
-    }
-
-    .popup-shopee-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #ff5722;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 15px;
-    }
-  </style>
+     </style>
 </head>
 <body>
 
@@ -166,42 +133,22 @@
   <a id="chapter1Btn" class="chapter-link" href="#">📖 Chương 1</a>
   <a id="chapter2Btn" class="chapter-link" href="#">📖 Chương 2 (H)</a>
 
-  <!-- Popup -->
-  <div id="shopeePopup" class="popup-overlay">
-    <div class="popup-content">
-      <h3>🌸 Một yêu cầu nhỏ từ Momoiro 🌸</h3>
-      <p>Để ủng hộ nhóm dịch, nếu được mời bạn mua thứ gì đó qua Shopee nhé!</p>
-      <a id="popupShopeeLink" class="popup-shopee-button" href="#" target="_blank">🛒 Mở Shopee</a>
-      <p style="color: #888; font-size: 0.9em;">(Chương truyện sẽ mở sau 5-6 giây...)</p>
-    </div>
-  </div>
-
   <script>
   let currentChapterLink = '';
   let currentShopeeLink = '';
 
+  function openShopeeAndRedirect(shopeeLink, chapterLink) {
+    // Mở Shopee ngay lập tức
+    window.open(shopeeLink, '_blank');
+
   document.getElementById('chapter1Btn').addEventListener('click', function(e) {
     e.preventDefault();
-    currentChapterLink = 'chuong3.1.html'; // Đường dẫn chương 1
-    currentShopeeLink = 'https://s.shopee.vn/801xDeXZtP'; // Shopee link chương 1
-    document.getElementById('shopeePopup').classList.add('active');
+    openShopeeAndRedirect('https://s.shopee.vn/801xDeXZtP', 'chuong3.1.html');
   });
 
   document.getElementById('chapter2Btn').addEventListener('click', function(e) {
     e.preventDefault();
-    currentChapterLink = 'chuong3.2.html'; // Đường dẫn chương 2
-    currentShopeeLink = 'https://s.shopee.vn/2g0QruTVje'; // Shopee link chương 2 (bạn thay tại đây)
-    document.getElementById('shopeePopup').classList.add('active');
-  });
-    
-  document.getElementById('popupShopeeLink').addEventListener('click', function(e) {
-    e.preventDefault();
-    window.open(currentShopeeLink, '_blank');
-    document.getElementById('shopeePopup').classList.remove('active');
-
-    setTimeout(() => {
-      window.location.href = currentChapterLink;
-    }, 3000);
+    openShopeeAndRedirect('https://s.shopee.vn/2g0QruTVje', 'chuong3.2.html');
   });
 </script>
 
