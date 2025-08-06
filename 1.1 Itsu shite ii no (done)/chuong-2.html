@@ -130,29 +130,9 @@
   </div>
 
   <!-- Nút đọc chương -->
-  <a id="chapter1Btn" class="chapter-link" href="#">📖 Chương 1</a>
-  <a id="chapter2Btn" class="chapter-link" href="#">📖 Chương 2 (H)</a>
-  <a id="chapter3Btn" class="chapter-link" href="#">📖 Phiên ngoại</a>
-
- <script>
-  document.getElementById('chapter1Btn').addEventListener('click', function(e) {
-    e.preventDefault();
-    window.open('https://s.shopee.vn/10s9mHA5zd', '_blank');
-    window.location.href = 'chuong-2.1.html';
-  });
-
-  document.getElementById('chapter2Btn').addEventListener('click', function(e) {
-    e.preventDefault();
-    window.open('https://s.shopee.vn/gFJOzvmOl', '_blank');
-    window.location.href = 'chuong-2.2.html';
-  });
-
-  document.getElementById('chapter3Btn').addEventListener('click', function(e) {
-    e.preventDefault();
-    window.open('https://s.shopee.vn/2B47GpqlGa', '_blank');
-    window.location.href = 'PN.html';
-  });
-</script>
+<a class="chapter-link" href="chuong-2.1.html">📖 Chương 1</a>
+<a class="chapter-link" href="chuong-2.2.html">📖 Chương 2 (H)</a>
+<a class="chapter-link" href="PN.html">📖 Phiên ngoại</a>
 
 
 <!-- Bình luận bằng Cusdis -->
@@ -167,7 +147,16 @@
   </div>
 
   <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-
+<script type="text/javascript">
+  atOptions = {
+    'key' : '0bb8728bb4b1784ea0018fe395d258eb',
+    'format' : 'iframe',
+    'height' : 60,
+    'width' : 468,
+    'params' : {}
+  };
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/0bb8728bb4b1784ea0018fe395d258eb/invoke.js"></script>
   <footer>
     &copy; 2025 Momoiro. All rights reserved.
   </footer>
