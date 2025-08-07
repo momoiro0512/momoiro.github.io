@@ -111,9 +111,21 @@
 
   <div class="top-nav">
     <a href="/index.html" class="home-button">Quay về trang chủ</a>
-    <a id="nextChapterBtn" class="home-button" href="#">Chương tiếp</a>
+    <a class="home-button" href="chuong3.2.html">Chương tiếp</a>
   </div>
-
+ <!-- QUẢNG CÁO BANNER -->
+  <div style="margin: 30px auto; text-align: center;">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '0bb8728bb4b1784ea0018fe395d258eb',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/0bb8728bb4b1784ea0018fe395d258eb/invoke.js"></script>
+  </div>
   <h1>(GoFushi Doujinshi) Sổ tay thanh xuân</h1>
 
   <div class="image-container">
@@ -134,39 +146,6 @@
 </script>
   </div>
 
-  <!-- POPUP -->
-  <div id="shopeePopup" class="popup-overlay">
-    <div class="popup-content">
-      <h3>🌸 Một yêu cầu nhỏ từ Momoiro 🌸</h3>
-      <p>Để ủng hộ nhóm dịch, nếu được mời bạn mua thứ gì đó qua Shopee nhé!</p>
-      <a id="popupShopeeLink" class="popup-shopee-button" href="#" target="_blank">🛒 Mở Shopee</a>
-      <p style="color: #888; font-size: 0.9em;">(Chương truyện sẽ mở sau vài giây...)</p>
-    </div>
-  </div>
-
-  <!-- SCRIPT -->
-  <script>
-    const nextChapterLink = 'chuong3.2.html';
-    const shopeeLink = 'https://s.shopee.vn/3LG7efK7sX';
-
-    const nextBtn = document.getElementById('nextChapterBtn');
-    const popup = document.getElementById('shopeePopup');
-    const popupShopeeLink = document.getElementById('popupShopeeLink');
-
-    nextBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      popup.classList.add('active');
-    });
-
-    popupShopeeLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.open(shopeeLink, '_blank');
-      popup.classList.remove('active');
-      setTimeout(() => {
-        window.location.href = nextChapterLink;
-      }, 3000);
-    });
-  </script>
 
 </body>
 </html>
