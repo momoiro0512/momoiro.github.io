@@ -113,7 +113,19 @@
     <a id="prevChapterBtn" class="home-button" href="#">Chương trước</a>
     <a href="/index.html" class="home-button">Quay về trang chủ</a>
   </div>
-
+<!-- QUẢNG CÁO BANNER -->
+  <div style="margin: 30px auto; text-align: center;">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '0bb8728bb4b1784ea0018fe395d258eb',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/0bb8728bb4b1784ea0018fe395d258eb/invoke.js"></script>
+  </div>
   <h1>(GoFushi Doujinshi) Sổ tay thanh xuân</h1>
 
   <div class="image-container">
@@ -126,27 +138,14 @@
 </script>
   </div>
 
-  <!-- POPUP -->
-  <div id="shopeePopup" class="popup-overlay">
-    <div class="popup-content">
-      <h3>🌸 Một yêu cầu nhỏ từ Momoiro 🌸</h3>
-      <p>Để ủng hộ nhóm dịch, nếu được mời bạn mua thứ gì đó qua Shopee nhé!</p>
-      <a id="popupShopeeLink" class="popup-shopee-button" href="#" target="_blank">🛒 Mở Shopee</a>
-      <p style="color: #888; font-size: 0.9em;">(Chương truyện sẽ mở sau vài giây...)</p>
-    </div>
-  </div>
 
    <!-- SCRIPT -->
  <script>
   const prevChapterLink = 'chuong3.1.html'; // 🔁 Đường dẫn chương trước
-  const prevShopeeLink = 'https://s.shopee.vn/40VoRk0X00'; // 🔁 Link Shopee chương trước
 
   let currentChapterLink = '';
-  let currentShopeeLink = '';
 
   const prevBtn = document.getElementById('prevChapterBtn');
-  const popup = document.getElementById('shopeePopup');
-  const popupShopeeLink = document.getElementById('popupShopeeLink');
 
   prevBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -155,14 +154,6 @@
     popup.classList.add('active');
   });
 
-  popupShopeeLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.open(currentShopeeLink, '_blank');
-    popup.classList.remove('active');
-    setTimeout(() => {
-      window.location.href = currentChapterLink;
-    }, 3000);
-  });
 </script>
 
 </body>
