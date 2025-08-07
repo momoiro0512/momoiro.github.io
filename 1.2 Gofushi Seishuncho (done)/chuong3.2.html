@@ -141,19 +141,13 @@
 
    <!-- SCRIPT -->
  <script>
-  const prevChapterLink = 'chuong3.1.html'; // 🔁 Đường dẫn chương trước
-
-  let currentChapterLink = '';
+  const prevChapterLink = 'chuong3.1.html';
 
   const prevBtn = document.getElementById('prevChapterBtn');
-
   prevBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    currentChapterLink = prevChapterLink;
-    currentShopeeLink = prevShopeeLink;
-    popup.classList.add('active');
+    window.location.href = prevChapterLink;
   });
-
 </script>
 
 </body>
